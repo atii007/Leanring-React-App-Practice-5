@@ -30,6 +30,14 @@ const Topics = () => {
                 <Finance />
               </div>
             </div>
+            <div className="col-12 text-center mt-5">
+              <p>
+                Want to See more?
+                <a href="#" className="btn custom-btn custom-border-btn ms-3">
+                  Check Out the List
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </section>
