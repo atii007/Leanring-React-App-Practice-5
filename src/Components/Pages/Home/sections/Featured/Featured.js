@@ -1,7 +1,7 @@
 import React from "react";
 
-import Web from "./FeaturedCards/Web";
-import FinanaceBox from "./FeaturedCards/Finance";
+import WebBox from "./FeaturedCards/WebBox";
+import FinanaceBox from "./FeaturedCards/FinanceBox";
 
 const Featured = () => {
   return (
@@ -9,7 +9,7 @@ const Featured = () => {
       <section className="featured-section">
         <div className="container">
           <div className="row justify-content-center">
-            <Web />
+            <WebBox />
             <FinanaceBox />
           </div>
         </div>

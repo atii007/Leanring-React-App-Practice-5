@@ -2,28 +2,29 @@ import React from "react";
 
 import businesswomanImage from "../../../../../../assets/images/businesswoman-using-tablet-analysis.jpg";
 
+const finance = {
+  title: "Finance",
+  description:
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus",
+  Image: businesswomanImage,
+  href: "topics-detail.html",
+};
+
 const FinanaceBox = () => {
   return (
     <div className="col-lg-6 col-12">
       <div className="custom-block custom-block-overlay">
         <div className="d-flex flex-column h-100">
           <img
-            src={businesswomanImage}
+            src={finance.Image}
             className="custom-block-image img-fluid"
             alt="featuredImage"
           />
           <div className="custom-block-overlay-text d-flex">
             <div>
-              <h5 className="text-white mb-2">Finance</h5>
-              <p className="text-white">
-                Topic Listing Template includes homepage, listing page, detail
-                page, and contact page. You can feel free to edit and adapt for
-                your CMS requirements.
-              </p>
-              <a
-                href="topics-detail.html"
-                className="btn custom-btn mt-2 mt-lg-3"
-              >
+              <h5 className="text-white mb-2">{finance.title}</h5>
+              <p className="text-white">{finance.description}</p>
+              <a href={finance.href} className="btn custom-btn mt-2 mt-lg-3">
                 Learn More
               </a>
             </div>

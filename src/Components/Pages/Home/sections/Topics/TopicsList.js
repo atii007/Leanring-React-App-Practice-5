@@ -14,25 +14,29 @@ const TopicsList = () => {
   ];
 
   return (
-    <ul className="nav nav-tabs" id="myTab" role="tablist">
-      {listItems.map((item) => (
-        <li className="nav-item" role="presentation" key={item.id}>
-          <button
-            className={`nav-link ${activeTab === item.id ? "active" : ""}`}
-            id={`${item.id}-tab`}
-            data-bs-toggle="tab"
-            data-bs-target={`#${item.id}-tab-pane`}
-            type="button"
-            role="tab"
-            aria-controls={`${item.id}-tab-pane`}
-            aria-selected={activeTab === item.id}
-            onClick={() => handleTabClick(item.id)}
-          >
-            {item.title}
-          </button>
-        </li>
-      ))}
-    </ul>
+    <div className="container-fluid">
+      <div className="row">
+        <ul className="nav nav-tabs" id="myTab" role="tablist">
+          {listItems.map((item) => (
+            <li className="nav-item" role="presentation" key={item.id}>
+              <button
+                className={`nav-link ${activeTab === item.id ? "active" : ""}`}
+                id={`${item.id}-tab`}
+                data-bs-toggle="tab"
+                data-bs-target={`#${item.id}-tab-pane`}
+                type="button"
+                role="tab"
+                aria-controls={`${item.id}-tab-pane`}
+                aria-selected={activeTab === item.id}
+                onClick={() => handleTabClick(item.id)}
+              >
+                {item.title}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
 

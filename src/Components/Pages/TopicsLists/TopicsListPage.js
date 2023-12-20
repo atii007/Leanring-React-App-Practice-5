@@ -10,10 +10,8 @@ const TopicsListPage = () => {
     <>
       <Header />
       <TopicsListingHeader />
-
       <Popular />
       <Trending />
-
       <Footer />
     </>
   );

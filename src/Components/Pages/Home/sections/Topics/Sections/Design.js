@@ -2,7 +2,7 @@ import React from "react";
 
 import undrawRedesignFeedback from "../../../../../../assets/images/topics/undraw_Redesign_feedback_re_jvm0.png";
 import colleaguesWorkingCozyOffice from "../../../../../../assets/images/topics/colleagues-working-cozy-office-medium-shot.png";
-import Web from "../../Featured/FeaturedCards/Web";
+import WebBox from "../../Featured/FeaturedCards/WebBox";
 
 const designDetails = [
   {
@@ -30,7 +30,7 @@ const Design = () => {
         tabIndex={0}
       >
         <div className="row">
-          <Web />
+          <WebBox />
           {designDetails.map((des) => (
             <div className="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
               <div className="custom-block bg-white shadow-lg">

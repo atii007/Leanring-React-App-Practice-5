@@ -7,16 +7,18 @@ const topics = [
   {
     title: "Web Design",
     description:
-      "Topic Listing includes home, listing, detail and contact pages. Feel free to modify this template for your custom websites.",
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus",
     badge: "14",
     image: undrawRemoteDesignTeam,
+    href: "topics-detail.html",
   },
   {
     title: "Advertising",
     description:
-      "Visit TemplateMo website to download free CSS templates. Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus",
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus",
     badge: "30",
     image: undrawOnlineAd,
+    href: "topics-detail.html",
   },
   {
     title: "Podcast",
@@ -24,6 +26,7 @@ const topics = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus",
     badge: "20",
     image: undrawPodcastAudience,
+    href: "topics-detail.html",
   },
 ];
 
@@ -37,7 +40,10 @@ const Popular = () => {
           </div>
           <div className="col-lg-8 col-12 mt-3 mx-auto">
             {topics.map((topDet) => (
-              <div className="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+              <div
+                className="custom-block custom-block-topics-listing bg-white shadow-lg mb-5"
+                key={topDet.title}
+              >
                 <div className="d-flex">
                   <img
                     src={topDet.image}
@@ -49,7 +55,7 @@ const Popular = () => {
                       <h5 className="mb-2">{topDet.title}</h5>
                       <p className="mb-0">{topDet.description}</p>
                       <a
-                        href="topics-detail.html"
+                        href={topDet.href}
                         className="btn custom-btn mt-3 mt-lg-4"
                       >
                         Learn More

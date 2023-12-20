@@ -1,10 +1,4 @@
-/*
 
-TemplateMo 590 topic listing
-
-https://templatemo.com/tm-590-topic-listing
-
-*/
 
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
@@ -198,7 +192,7 @@ strong {
 }
 
 
-/*---------------------------------------
+/*--------------------------------------- 
   CUSTOM ICON COLOR               
 -----------------------------------------*/
 .custom-icon {
@@ -890,9 +884,10 @@ blockquote {
   CUSTOM FORM               
 -----------------------------------------*/
 .custom-form .form-control {
-  border-radius: var(--border-radius-large);
+
   color: var(--p-color);
-  margin-bottom: 24px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   padding-top: 13px;
   padding-bottom: 13px;
   padding-left: 20px;
@@ -906,7 +901,6 @@ blockquote {
 .custom-form button[type="submit"] {
   background: var(--custom-btn-bg-color);
   border: none;
-  border-radius: var(--border-radius-large);
   color: var(--white-color);
   font-family: var(--title-font-family);
   font-size: var(--p-font-size);
@@ -920,7 +914,12 @@ blockquote {
   background: var(--custom-btn-bg-hover-color);
   border-color: transparent;
 }
-
+ .custom-form button[type="submit"]:disabled {
+  background-color: #ccc;
+  color: #393939;
+  border-color: #ccc;
+  cursor: not-allowed;
+ }
 
 /*---------------------------------------
   SITE FOOTER              
@@ -1150,5 +1149,9 @@ blockquote {
   h5 {
     font-size: 20px;
   }
+}
+
+.error-text {
+  color: red;
 }
 

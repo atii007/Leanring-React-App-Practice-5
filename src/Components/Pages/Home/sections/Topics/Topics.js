@@ -16,11 +16,9 @@ const Topics = () => {
             </div>
           </div>
         </div>
-        <div className="container-fluid">
-          <div className="row">
-            <TopicsList />
-          </div>
-        </div>
+
+        <TopicsList />
+
         <div className="container">
           <div className="row">
             <div className="col-12">

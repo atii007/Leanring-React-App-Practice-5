@@ -4,7 +4,8 @@ const Menu = [
   { title: "Home", href: "section_1" },
   { title: "Browse Topics", href: "section_2" },
   { title: "How it works", href: "section_3" },
-  { title: "Contact", href: "section_5" },
+  { title: "Find Us", href: "section_5" },
+  { title: "Contact", href: "" },
 ];
 
 const FooterLinkList = () => {

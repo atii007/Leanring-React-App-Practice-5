@@ -3,18 +3,15 @@ import { useState, useEffect } from "react";
 const NavbarList = () => {
   const [activeLink, setActiveLink] = useState("Home");
 
-  const dropdown = [
-    { title: "Topics Listing", href: "topics-listing.html" },
-    { title: "Contact Form", href: "contact.html" },
-  ];
   const links = [
     { title: "Home", href: "section_1" },
     { title: "Browse Topics", href: "section_2" },
     { title: "How it Works", href: "section_3" },
-    { title: "Contact", href: "section_5" },
+    { title: "Find Us", href: "section_5" },
+    { title: "Contact", href: "" },
     {
-      title: "Pages",
-      dropdownItems: dropdown,
+      title: "Popular Topics",
+      href: "",
     },
   ];
 
@@ -50,7 +47,7 @@ const NavbarList = () => {
     <ul className="navbar-nav ms-lg-5 me-lg-auto">
       {links.map((sec) => (
         <li
-          key={sec.href}
+          key={sec.title}
           className={`nav-item ${sec.dropdownItems ? "dropdown" : ""}`}
         >
           {sec.dropdownItems ? (
@@ -68,18 +65,6 @@ const NavbarList = () => {
               >
                 {sec.title}
               </a>
-              <ul
-                className="dropdown-menu dropdown-menu-light"
-                aria-labelledby={`navbarLightDropdownMenuLink_${sec.href}`}
-              >
-                {sec.dropdownItems.map((dropdownItem) => (
-                  <li key={dropdownItem.href}>
-                    <a className="dropdown-item" href={dropdownItem.href}>
-                      {dropdownItem.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
             </>
           ) : (
             <a
