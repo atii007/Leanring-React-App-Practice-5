@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 const NavbarList = () => {
   const [activeLink, setActiveLink] = useState("Home");
 
   const links = [
-    { title: "Home", href: "section_1" },
-    { title: "Browse Topics", href: "section_2" },
-    { title: "How it Works", href: "section_3" },
-    { title: "Find Us", href: "section_5" },
-    { title: "Contact", href: "" },
+    { title: "Home", href: "#section_1" },
+    { title: "Browse Topics", href: "#section_2" },
+    { title: "How it Works", href: "#section_3" },
+    { title: "Find Us", href: "#section_5" },
+    { title: "Contact", href: "/contact" },
     {
       title: "Popular Topics",
-      href: "",
+      href: "/TopicsListPage",
     },
   ];
 
@@ -52,11 +53,11 @@ const NavbarList = () => {
         >
           {sec.dropdownItems ? (
             <>
-              <a
+              <NavLink
                 className={`nav-link dropdown-toggle ${
                   activeLink === sec.title ? "active" : ""
                 }`}
-                href="#pages"
+                to={sec.href}
                 id={`navbarLightDropdownMenuLink_${sec.href}`}
                 role="button"
                 data-bs-toggle="dropdown"
@@ -64,14 +65,14 @@ const NavbarList = () => {
                 onClick={() => handleLinkClick(sec.title)}
               >
                 {sec.title}
-              </a>
+              </NavLink>
             </>
           ) : (
             <a
               className={`nav-link click-scroll ${
                 activeLink === sec.title ? "active" : ""
               }`}
-              href={`#${sec.href}`}
+              href={sec.href}
               onClick={() => handleLinkClick(sec.title)}
             >
               {sec.title}
