@@ -11,7 +11,7 @@ const topics = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus",
     badge: "14",
     image: undrawRemoteDesignTeam,
-    href: "TopicsListPage",
+    href: "",
   },
   {
     title: "Advertising",
@@ -19,7 +19,7 @@ const topics = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus",
     badge: "30",
     image: undrawOnlineAd,
-    href: "TopicsListPage",
+    href: "",
   },
   {
     title: "Podcast",
@@ -27,7 +27,7 @@ const topics = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus",
     badge: "20",
     image: undrawPodcastAudience,
-    href: "TopicsListPage",
+    href: "",
   },
 ];
 

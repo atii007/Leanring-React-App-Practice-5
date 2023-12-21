@@ -51,7 +51,10 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
               <NavbarList />
               <div className="d-none d-lg-block">
-                <Link to="/" className="navbar-icon bi-person smoothscroll" />
+                <Link
+                  to="register"
+                  className="navbar-icon bi-person smoothscroll"
+                />
               </div>
             </div>
           </div>

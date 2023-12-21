@@ -11,7 +11,6 @@ const NavbarList = () => {
       href: "/TopicsListPage",
     },
     { title: "Contact", href: "/contact" },
-    // { title: "Register Now", href: "/register" },
   ];
 
   const handleLinkClick = (title) => {
