@@ -3,6 +3,7 @@ import React from "react";
 import undrawRemoteDesignTeam from "../../../assets/images/topics/undraw-Remote-design-team-re-urdx.png";
 import undrawPodcastAudience from "../../../assets/images/topics/undraw_Podcast_audience_re_4i5q.png";
 import undrawOnlineAd from "../../../assets/images/topics/undraw_online_ad_re_ol62.png";
+import { Link } from "react-router-dom";
 const topics = [
   {
     title: "Web Design",
@@ -10,7 +11,7 @@ const topics = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus",
     badge: "14",
     image: undrawRemoteDesignTeam,
-    href: "topics-detail.html",
+    href: "TopicsListPage",
   },
   {
     title: "Advertising",
@@ -18,7 +19,7 @@ const topics = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus",
     badge: "30",
     image: undrawOnlineAd,
-    href: "topics-detail.html",
+    href: "TopicsListPage",
   },
   {
     title: "Podcast",
@@ -26,7 +27,7 @@ const topics = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus",
     badge: "20",
     image: undrawPodcastAudience,
-    href: "topics-detail.html",
+    href: "TopicsListPage",
   },
 ];
 
@@ -54,12 +55,12 @@ const Popular = () => {
                     <div>
                       <h5 className="mb-2">{topDet.title}</h5>
                       <p className="mb-0">{topDet.description}</p>
-                      <a
-                        href={topDet.href}
+                      <Link
+                        to={topDet.href}
                         className="btn custom-btn mt-3 mt-lg-4"
                       >
                         Learn More
-                      </a>
+                      </Link>
                     </div>
                     <span className="badge bg-design rounded-pill ms-auto">
                       {topDet.badge}

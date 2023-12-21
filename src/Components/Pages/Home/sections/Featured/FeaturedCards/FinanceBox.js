@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import businesswomanImage from "../../../../../../assets/images/businesswoman-using-tablet-analysis.jpg";
 
@@ -7,7 +8,7 @@ const finance = {
   description:
     "Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus",
   Image: businesswomanImage,
-  href: "topics-detail.html",
+  href: "/TopicsListPage",
 };
 
 const FinanaceBox = () => {
@@ -24,9 +25,9 @@ const FinanaceBox = () => {
             <div>
               <h5 className="text-white mb-2">{finance.title}</h5>
               <p className="text-white">{finance.description}</p>
-              <a href={finance.href} className="btn custom-btn mt-2 mt-lg-3">
+              <Link to={finance.href} className="btn custom-btn mt-2 mt-lg-3">
                 Learn More
-              </a>
+              </Link>
             </div>
             <span className="badge bg-finance rounded-pill ms-auto">25</span>
           </div>
@@ -34,16 +35,16 @@ const FinanaceBox = () => {
             <p className="text-white me-4">Share:</p>
             <ul className="social-icon">
               <li className="social-icon-item">
-                <a href="/" className="social-icon-link bi-twitter" />
+                <Link to="/" className="social-icon-link bi-twitter" />
               </li>
               <li className="social-icon-item">
-                <a href="/" className="social-icon-link bi-facebook" />
+                <Link to="/" className="social-icon-link bi-facebook" />
               </li>
               <li className="social-icon-item">
-                <a href="/" className="social-icon-link bi-pinterest" />
+                <Link to="/" className="social-icon-link bi-pinterest" />
               </li>
             </ul>
-            <a href="/" className="custom-icon bi-bookmark ms-auto" />
+            <Link to="/" className="custom-icon bi-bookmark ms-auto" />
           </div>
           <div className="section-overlay" />
         </div>

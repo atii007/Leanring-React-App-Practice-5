@@ -3,27 +3,39 @@ import * as Yup from "yup";
 import TextError from "./TextError";
 import ContactAddress from "./ContactAddress";
 
-const initialValues = {
-  name: "",
-  email: "",
-  subject: "",
-  message: "",
-};
-
-const validationSchema = Yup.object({
-  name: Yup.string().required("Name Required!"),
-  email: Yup.string().email("Invalid Email Format").required("Email Required"),
-  subject: Yup.string().required("Subject must be Given"),
-  message: Yup.string().required("Kindly Comment Here"),
-});
-
-const onSubmit = (values, onSubmitProp) => {
-  console.log("Form Data", values);
-
-  onSubmitProp.resetForm();
-};
-
 const ContactForm = () => {
+  const initialValues = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  };
+
+  const validationSchema = Yup.object({
+    name: Yup.string().required("Name Required!"),
+    email: Yup.string()
+      .email("Invalid Email Format")
+      .required("Email Required"),
+    subject: Yup.string().required("Subject must be Given"),
+    message: Yup.string().required("Kindly Comment Here"),
+  });
+
+  const onSubmit = async (values, onSubmitProp) => {
+    console.log("Form Data", values);
+
+    await fetch(
+      "https://custom-hooks-ac50d-default-rtdb.firebaseio.com/users.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          user: values,
+        }),
+      }
+    );
+    window.alert("Message Sent Successfully!");
+    onSubmitProp.resetForm();
+  };
+
   return (
     <section className="section-padding section-bg">
       <div className="container">
@@ -50,7 +62,7 @@ const ContactForm = () => {
                             className="form-control"
                             placeholder="Name"
                           />
-                          <label htmlFor="floatingInput">Name</label>
+                          <label htmlFor="name">Name</label>
                           <ErrorMessage name="name" component={TextError} />
                         </div>
                       </div>
@@ -64,7 +76,7 @@ const ContactForm = () => {
                             className="form-control"
                             placeholder="Email address"
                           />
-                          <label htmlFor="floatingInput">Email address</label>
+                          <label htmlFor="email">Email address</label>
                           <ErrorMessage name="email" component={TextError} />
                         </div>
                       </div>
@@ -73,11 +85,11 @@ const ContactForm = () => {
                           <Field
                             type="text"
                             name="subject"
-                            id="name"
+                            id="subject"
                             className="form-control"
-                            placeholder="Name"
+                            placeholder="Subject"
                           />
-                          <label htmlFor="floatingInput">Subject</label>
+                          <label htmlFor="subject">Subject</label>
                           <ErrorMessage name="subject" component={TextError} />
                         </div>
                         <div className="form-floating">
@@ -88,7 +100,7 @@ const ContactForm = () => {
                             name="message"
                             placeholder="Tell me about the project"
                           />
-                          <label htmlFor="floatingTextarea">
+                          <label htmlFor="message">
                             Tell me about the project
                           </label>
                           <ErrorMessage name="message" component={TextError} />

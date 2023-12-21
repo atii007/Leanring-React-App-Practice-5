@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const address = [
   {
@@ -51,9 +52,9 @@ const Address = () => {
               <span span className="me-2">
                 {con.title}
               </span>
-              <a href={con.href} className="site-footer-link">
+              <Link to={con.href} className="site-footer-link">
                 {con.description}
-              </a>
+              </Link>
             </p>
           ))}
         </div>

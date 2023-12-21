@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ContactHeader = () => {
   return (
@@ -9,7 +10,7 @@ const ContactHeader = () => {
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb">
                 <li className="breadcrumb-item">
-                  <a href="index.html">Homepage</a>
+                  <Link to="/">Homepage</Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
                   Contact Form

@@ -2,6 +2,7 @@ import React from "react";
 
 import undrawFinance from "../../../../../../assets/images/topics/undraw_Finance_re_gnv2.png";
 import undrawEducatorRe from "../../../../../../assets/images/topics/undraw_Educator_re_ju47.png";
+import { Link } from "react-router-dom";
 
 const financeDetails = [
   {
@@ -33,7 +34,7 @@ const Finance = () => {
           {financeDetails.map((finance) => (
             <div className="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
               <div className="custom-block bg-white shadow-lg">
-                <a href="topics-detail.html">
+                <Link to="TopicsListPage">
                   <div className="d-flex">
                     <div>
                       <h5 className="mb-2">{finance.title}</h5>
@@ -48,7 +49,7 @@ const Finance = () => {
                     className="custom-block-image img-fluid"
                     alt={finance.image}
                   />
-                </a>
+                </Link>
               </div>
             </div>
           ))}

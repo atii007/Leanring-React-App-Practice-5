@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const contact = [
   { title: "305-240-9671", href: "tel: 305-240-9671" },
@@ -20,9 +21,9 @@ const FooterInfoSection = () => {
           <h6 className="site-footer-title mb-3">{info.title}</h6>
           {info.contactInfo.map((contact, index) => (
             <p className="text-white d-flex mb-1" key={index}>
-              <a href={contact.href} className="site-footer-link">
+              <Link to={contact.href} className="site-footer-link">
                 {contact.title}
-              </a>
+              </Link>
             </p>
           ))}
         </div>

@@ -2,13 +2,10 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 const NavbarList = () => {
-  const [activeLink, setActiveLink] = useState("Home");
+  const [activeLink, setActiveLink] = useState("");
 
   const links = [
-    { title: "Home", href: "#section_1" },
-    { title: "Browse Topics", href: "#section_2" },
-    { title: "How it Works", href: "#section_3" },
-    { title: "Find Us", href: "#section_5" },
+    { title: "Home", href: "/" },
     { title: "Contact", href: "/contact" },
     {
       title: "Popular Topics",
@@ -54,29 +51,25 @@ const NavbarList = () => {
           {sec.dropdownItems ? (
             <>
               <NavLink
-                className={`nav-link dropdown-toggle ${
+                className={`nav-link click-scroll ${
                   activeLink === sec.title ? "active" : ""
                 }`}
                 to={sec.href}
-                id={`navbarLightDropdownMenuLink_${sec.href}`}
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
                 onClick={() => handleLinkClick(sec.title)}
               >
                 {sec.title}
               </NavLink>
             </>
           ) : (
-            <a
+            <NavLink
               className={`nav-link click-scroll ${
                 activeLink === sec.title ? "active" : ""
               }`}
-              href={sec.href}
+              to={sec.href}
               onClick={() => handleLinkClick(sec.title)}
             >
               {sec.title}
-            </a>
+            </NavLink>
           )}
         </li>
       ))}

@@ -3,6 +3,7 @@ import React from "react";
 import undrawOnlineAd from "../../../../../../assets/images/topics/undraw_online_ad_re_ol62.png";
 import undrawGroupVideo from "../../../../../../assets/images/topics/undraw_Group_video_re_btu7.png";
 import undrawViralTweet from "../../../../../../assets/images/topics/undraw_viral_tweet_gndb.png";
+import { Link } from "react-router-dom";
 
 const marketingDetails = [
   {
@@ -39,7 +40,7 @@ const Marketing = () => {
           {marketingDetails.map((mark) => (
             <div className="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
               <div className="custom-block bg-white shadow-lg">
-                <a href="topics-detail.html">
+                <Link to="TopicsListPage">
                   <div className="d-flex">
                     <div>
                       <h5 className="mb-2">{mark.title}</h5>
@@ -54,7 +55,7 @@ const Marketing = () => {
                     className="custom-block-image img-fluid"
                     alt={mark.image}
                   />
-                </a>
+                </Link>
               </div>
             </div>
           ))}

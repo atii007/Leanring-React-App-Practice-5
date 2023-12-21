@@ -1,11 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Menu = [
-  { title: "Home", href: "section_1" },
-  { title: "Browse Topics", href: "section_2" },
-  { title: "How it works", href: "section_3" },
-  { title: "Find Us", href: "section_5" },
-  { title: "Contact", href: "" },
+  { title: "Home", href: "/" },
+  { title: "Contact", href: "/contact" },
+  {
+    title: "Popular Topics",
+    href: "/TopicsListPage",
+  },
 ];
 
 const FooterLinkList = () => {
@@ -15,9 +17,9 @@ const FooterLinkList = () => {
       <ul className="site-footer-links">
         {Menu.map((footSec) => (
           <li className="site-footer-link-item" key={footSec.href}>
-            <a href={`#${footSec.href}`} className="site-footer-link">
+            <Link to={footSec.href} className="site-footer-link">
               {footSec.title}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

@@ -4,6 +4,7 @@ import TopicsList from "./TopicsList";
 import Design from "./Sections/Design";
 import Marketing from "./Sections/Marketing";
 import Finance from "./Sections/Finance";
+import { Link } from "react-router-dom";
 
 const Topics = () => {
   return (
@@ -31,9 +32,12 @@ const Topics = () => {
             <div className="col-12 text-center mt-5">
               <p>
                 Want to See more?
-                <a href="#" className="btn custom-btn custom-border-btn ms-3">
+                <Link
+                  to="TopicsListPage"
+                  className="btn custom-btn custom-border-btn ms-3"
+                >
                   Check Out the List
-                </a>
+                </Link>
               </p>
             </div>
           </div>

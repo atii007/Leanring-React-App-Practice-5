@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavbarList from "./NavbarList";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -29,12 +30,12 @@ const Navbar = () => {
           style={{ position: "fixed", top: "0", width: "100%" }}
         >
           <div className="container">
-            <a className="navbar-brand" href="index.html">
+            <NavLink className="navbar-brand" to="/">
               <i className="bi-back" />
               <span>Topic</span>
-            </a>
+            </NavLink>
             <div className="d-lg-none ms-auto me-4">
-              <a href="#top" className="navbar-icon bi-person smoothscroll" />
+              <Link to="/" className="navbar-icon bi-person smoothscroll" />
             </div>
             <button
               className="navbar-toggler"
@@ -50,7 +51,7 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
               <NavbarList />
               <div className="d-none d-lg-block">
-                <a href="#top" className="navbar-icon bi-person smoothscroll" />
+                <Link to="/" className="navbar-icon bi-person smoothscroll" />
               </div>
             </div>
           </div>

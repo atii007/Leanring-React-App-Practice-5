@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import WorkingList from "./WorkingLists";
 
 const Work = () => {
@@ -14,9 +15,9 @@ const Work = () => {
             <div className="col-12 text-center mt-5">
               <p className="text-white">
                 Want to learn more?
-                <a href="#" className="btn custom-btn custom-border-btn ms-3">
+                <Link to="/" className="btn custom-btn custom-border-btn ms-3">
                   Check out Youtube
-                </a>
+                </Link>
               </p>
             </div>
           </div>
