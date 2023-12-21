@@ -24,11 +24,11 @@ const ContactForm = () => {
     console.log("Form Data", values);
 
     await fetch(
-      "https://custom-hooks-ac50d-default-rtdb.firebaseio.com/users.json",
+      "https://custom-hooks-ac50d-default-rtdb.firebaseio.com/messages.json",
       {
         method: "POST",
         body: JSON.stringify({
-          user: values,
+          message: values,
         }),
       }
     );

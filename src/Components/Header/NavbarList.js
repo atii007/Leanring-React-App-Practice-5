@@ -6,11 +6,12 @@ const NavbarList = () => {
 
   const links = [
     { title: "Home", href: "/" },
-    { title: "Contact", href: "/contact" },
     {
       title: "Popular Topics",
       href: "/TopicsListPage",
     },
+    { title: "Contact", href: "/contact" },
+    // { title: "Register Now", href: "/register" },
   ];
 
   const handleLinkClick = (title) => {
@@ -48,29 +49,15 @@ const NavbarList = () => {
           key={sec.title}
           className={`nav-item ${sec.dropdownItems ? "dropdown" : ""}`}
         >
-          {sec.dropdownItems ? (
-            <>
-              <NavLink
-                className={`nav-link click-scroll ${
-                  activeLink === sec.title ? "active" : ""
-                }`}
-                to={sec.href}
-                onClick={() => handleLinkClick(sec.title)}
-              >
-                {sec.title}
-              </NavLink>
-            </>
-          ) : (
-            <NavLink
-              className={`nav-link click-scroll ${
-                activeLink === sec.title ? "active" : ""
-              }`}
-              to={sec.href}
-              onClick={() => handleLinkClick(sec.title)}
-            >
-              {sec.title}
-            </NavLink>
-          )}
+          <NavLink
+            className={`nav-link click-scroll ${
+              activeLink === sec.title ? "active" : ""
+            }`}
+            to={sec.href}
+            onClick={() => handleLinkClick(sec.title)}
+          >
+            {sec.title}
+          </NavLink>
         </li>
       ))}
     </ul>

@@ -4,7 +4,7 @@ import TopicsListPage from "./Components/Pages/TopicsLists/TopicsListPage";
 import Home from "./Components/Pages/Home/Home";
 import Contact from "./Components/Pages/Contact/Contact";
 import RootLayout from "./Components/Root";
-
+// import Registeration from "./Components/Pages/Register/Registration";
 function App() {
   return (
     <main>
@@ -14,6 +14,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="contact" element={<Contact />} />
             <Route path="TopicsListPage" element={<TopicsListPage />} />
+            {/* <Route path="register" element={<Registeration />} /> */}
           </Route>
         </Routes>
       </Router>
