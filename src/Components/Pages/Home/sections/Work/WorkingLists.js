@@ -33,7 +33,7 @@ const WorkingList = () => {
             <div className="inner" />
           </div>
           {details.map((det) => (
-            <li>
+            <li key={det.title}>
               <h4 className="text-white mb-3">{det.title}</h4>
               <p className="text-white">{det.description}</p>
               <div className="icon-holder">

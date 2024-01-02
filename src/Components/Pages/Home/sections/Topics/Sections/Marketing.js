@@ -38,7 +38,10 @@ const Marketing = () => {
       >
         <div className="row">
           {marketingDetails.map((mark) => (
-            <div className="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
+            <div
+              className="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3"
+              key={mark.title}
+            >
               <div className="custom-block bg-white shadow-lg">
                 <Link to="TopicsListPage">
                   <div className="d-flex">

@@ -1,9 +1,14 @@
-import React from "react";
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { Formik } from "formik";
 import * as Yup from "yup";
-import TextError from "../Contact/TextError";
+import { Link, useSearchParams } from "react-router-dom";
+import onSubmit from "./onSubmit";
+import SignupForm from "./SignupForm";
+import LoginForm from "./LoginForm";
 
 const RegisterationForm = () => {
+  const [searchParams] = useSearchParams();
+  const isLogin = searchParams.get("mode") === "login";
+
   const initialValues = {
     username: "",
     email: "",
@@ -19,28 +24,15 @@ const RegisterationForm = () => {
     message: Yup.string().required("We would love to hear about you"),
   });
 
-  const onSubmit = async (values, isSubmitProp) => {
-    console.log(values);
-    await fetch(
-      "https://custom-hooks-ac50d-default-rtdb.firebaseio.com/users.json",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          user: values,
-        }),
-      }
-    );
-    isSubmitProp.resetForm();
-    window.alert("Registration Successfull!");
-  };
-
   return (
     <>
       <section className="section-padding section-bg">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 col-12">
-              <h3 className="mb-4 pb-2">Be A Part of It!</h3>
+              <h3 className="mb-4 pb-2">
+                {isLogin ? "Log in!" : "Register Yourself !"}
+              </h3>
             </div>
             <div className="col-lg-6 col-12">
               <Formik
@@ -50,81 +42,33 @@ const RegisterationForm = () => {
               >
                 {(formik) => {
                   return (
-                    <Form className="custom-form contact-form">
+                    <div className="custom-form contact-form">
                       <div className="row">
+                        {isLogin ? <LoginForm /> : <SignupForm />}
+
                         <div className="col-lg-6 col-md-6 col-12">
-                          <div className="form-floating">
-                            <Field
-                              type="text"
-                              name="username"
-                              id="username"
-                              className="form-control"
-                              placeholder="Username"
-                            />
-                            <label htmlFor="username">Username</label>
-                            <ErrorMessage
-                              name="username"
-                              component={TextError}
-                            />
-                          </div>
+                          <Link
+                            to={`?mode=${isLogin ? "signup" : "login"}`}
+                            className="form-control"
+                          >
+                            {isLogin ? "Signup" : "Login"}
+                          </Link>
                         </div>
                         <div className="col-lg-6 col-md-6 col-12">
-                          <div className="form-floating">
-                            <Field
-                              type="email"
-                              name="email"
-                              id="email"
-                              pattern="[^ @]*@[^ @]*"
-                              className="form-control"
-                              placeholder="Email address"
-                            />
-                            <label htmlFor="email">Email address</label>
-                            <ErrorMessage name="email" component={TextError} />
-                          </div>
-                        </div>
-                        <div className="col-lg-12 col-12">
-                          <div className="form-floating">
-                            <Field
-                              type="password"
-                              name="password"
-                              id="password"
-                              className="form-control"
-                              placeholder="Password"
-                            />
-                            <label htmlFor="subject">Password</label>
-                            <ErrorMessage
-                              name="password"
-                              component={TextError}
-                            />
-                          </div>
-                          <div className="form-floating">
-                            <Field
-                              type="textarea"
-                              className="form-control"
-                              id="message"
-                              name="message"
-                              placeholder="Tell me about the project"
-                            />
-                            <label htmlFor="message">
-                              Tell us about your Interests
-                            </label>
-                            <ErrorMessage
-                              name="message"
-                              component={TextError}
-                            />
-                          </div>
-                        </div>
-                        <div className="col-lg-4 col-12 ms-auto">
                           <button
                             type="submit"
                             disabled={!formik.isValid}
                             className="form-control"
                           >
-                            Submit
+                            Continue
+                            <i
+                              className="bi bi-arrow-right-circle"
+                              style={{ marginLeft: "10px" }}
+                            ></i>
                           </button>
                         </div>
                       </div>
-                    </Form>
+                    </div>
                   );
                 }}
               </Formik>

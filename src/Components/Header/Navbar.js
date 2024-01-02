@@ -31,11 +31,14 @@ const Navbar = () => {
         >
           <div className="container">
             <NavLink className="navbar-brand" to="/">
-              <i className="bi-back" />
+              <i className="bi bi-book-half" style={{ paddingRight: "5px" }} />
               <span>Topic</span>
             </NavLink>
             <div className="d-lg-none ms-auto me-4">
-              <Link to="/" className="navbar-icon bi-person smoothscroll" />
+              <Link
+                to="/register?mode=login"
+                className="navbar-icon bi-person smoothscroll"
+              />
             </div>
             <button
               className="navbar-toggler"
@@ -52,7 +55,7 @@ const Navbar = () => {
               <NavbarList />
               <div className="d-none d-lg-block">
                 <Link
-                  to="register"
+                  to="/register?mode=login"
                   className="navbar-icon bi-person smoothscroll"
                 />
               </div>

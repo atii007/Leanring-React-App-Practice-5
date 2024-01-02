@@ -32,7 +32,10 @@ const Finance = () => {
         {" "}
         <div className="row">
           {financeDetails.map((finance) => (
-            <div className="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+            <div
+              className="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3"
+              key={finance.title}
+            >
               <div className="custom-block bg-white shadow-lg">
                 <Link to="TopicsListPage">
                   <div className="d-flex">
