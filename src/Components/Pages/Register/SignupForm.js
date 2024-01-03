@@ -1,10 +1,9 @@
 import { ErrorMessage, Field } from "formik";
 import TextError from "../Contact/TextError";
-import { Form } from "react-router-dom";
 
 const SignupForm = () => {
   return (
-    <Form method="post">
+    <>
       <div className="col-lg-12 col-12">
         <div className="form-floating">
           <Field
@@ -56,7 +55,7 @@ const SignupForm = () => {
           <ErrorMessage name="message" component={TextError} />
         </div>
       </div>
-    </Form>
+    </>
   );
 };
 

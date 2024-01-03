@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavbarList from "./NavbarList";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -34,12 +34,7 @@ const Navbar = () => {
               <i className="bi bi-book-half" style={{ paddingRight: "5px" }} />
               <span>Topic</span>
             </NavLink>
-            <div className="d-lg-none ms-auto me-4">
-              <Link
-                to="/register?mode=login"
-                className="navbar-icon bi-person smoothscroll"
-              />
-            </div>
+
             <button
               className="navbar-toggler"
               type="button"
@@ -53,12 +48,6 @@ const Navbar = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <NavbarList />
-              <div className="d-none d-lg-block">
-                <Link
-                  to="/register?mode=login"
-                  className="navbar-icon bi-person smoothscroll"
-                />
-              </div>
             </div>
           </div>
         </nav>

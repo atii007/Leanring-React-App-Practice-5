@@ -5,10 +5,14 @@ import Home from "./Components/Pages/Home/Home";
 import Contact from "./Components/Pages/Contact/Contact";
 import RootLayout from "./Components/Root";
 import Registeration from "./Components/Pages/Register/Registration";
+import { action as logoutAction } from "./Components/Pages/Logout";
+import { tokenLoader } from "./util/auth";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    id: "root",
+    loader: tokenLoader,
     children: [
       {
         index: true,
@@ -25,7 +29,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Registeration />,
-        // action: authAction,
+      },
+      {
+        path: "logout",
+        action: logoutAction,
       },
     ],
   },

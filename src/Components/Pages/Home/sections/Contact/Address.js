@@ -49,9 +49,7 @@ const Address = () => {
           <hr />
           {adr.contact.map((con, index) => (
             <p className="d-flex align-items-center mb-1" key={index}>
-              <span span className="me-2">
-                {con.title}
-              </span>
+              <span className="me-2">{con.title}</span>
               <Link to={con.href} className="site-footer-link">
                 {con.description}
               </Link>

@@ -1,4 +1,4 @@
-const onSubmit = async (values, { resetForm, setFieldError }) => {
+const onSubmitSignup = async (values, { resetForm, setFieldError }) => {
   console.log(values);
 
   const response = await fetch(
@@ -39,4 +39,4 @@ const onSubmit = async (values, { resetForm, setFieldError }) => {
   window.alert("Registration Successful!");
 };
 
-export default onSubmit;
+export default onSubmitSignup;

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 const NavbarList = () => {
+  // const token = useRouteLoaderData("root");
   const [activeLink, setActiveLink] = useState("");
 
   const links = [
@@ -11,6 +12,7 @@ const NavbarList = () => {
       href: "/TopicsListPage",
     },
     { title: "Contact", href: "/contact" },
+    { title: "Authenticate", href: "/register?mode=login" },
   ];
 
   const handleLinkClick = (title) => {
@@ -42,24 +44,31 @@ const NavbarList = () => {
   });
 
   return (
-    <ul className="navbar-nav ms-lg-5 me-lg-auto">
-      {links.map((sec) => (
-        <li
-          key={sec.title}
-          className={`nav-item ${sec.dropdownItems ? "dropdown" : ""}`}
-        >
-          <NavLink
-            className={`nav-link click-scroll ${
-              activeLink === sec.title ? "active" : ""
-            }`}
-            to={sec.href}
-            onClick={() => handleLinkClick(sec.title)}
+    <>
+      <ul className="navbar-nav ms-lg-5 me-lg-auto">
+        {links.map((sec) => (
+          <li
+            key={sec.title}
+            className={`nav-item ${sec.dropdownItems ? "dropdown" : ""}`}
           >
-            {sec.title}
-          </NavLink>
-        </li>
-      ))}
-    </ul>
+            <NavLink
+              className={`nav-link click-scroll ${
+                activeLink === sec.title ? "active" : ""
+              }`}
+              to={sec.href}
+              onClick={() => handleLinkClick(sec.title)}
+            >
+              {sec.title}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+      {/* {token && (
+        <Form action="/logout" method="post">
+          <button className="form-control">Logout</button>
+        </Form>
+      )} */}
+    </>
   );
 };
 

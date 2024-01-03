@@ -1,28 +1,29 @@
-import { Formik } from "formik";
-import * as Yup from "yup";
+import { Formik, Form } from "formik";
+
 import { Link, useSearchParams } from "react-router-dom";
-import onSubmit from "./onSubmit";
+
 import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
+
+import validationSchemaSignup from "./Validation/SignupFormValidation";
+import validationSchemaLogin from "./Validation/LoginFormValidation";
+import onSubmitLogin from "./FormSubmission/LoginFormSubmission";
+import onSubmitSignup from "./FormSubmission/SignupFormSubmission";
 
 const RegisterationForm = () => {
   const [searchParams] = useSearchParams();
   const isLogin = searchParams.get("mode") === "login";
 
-  const initialValues = {
+  const initialValuesSignup = {
     username: "",
     email: "",
     password: "",
     message: "",
   };
-  const validationSchema = Yup.object({
-    username: Yup.string().required("UserName Required"),
-    email: Yup.string()
-      .email("Invalid Email Format")
-      .required("Email Required"),
-    password: Yup.string().required("Password Required"),
-    message: Yup.string().required("We would love to hear about you"),
-  });
+  const initialValuesLogin = {
+    email: "",
+    password: "",
+  };
 
   return (
     <>
@@ -36,13 +37,17 @@ const RegisterationForm = () => {
             </div>
             <div className="col-lg-6 col-12">
               <Formik
-                initialValues={initialValues}
-                validationSchema={validationSchema}
-                onSubmit={onSubmit}
+                initialValues={
+                  isLogin ? initialValuesLogin : initialValuesSignup
+                }
+                validationSchema={
+                  isLogin ? validationSchemaLogin : validationSchemaSignup
+                }
+                onSubmit={isLogin ? onSubmitLogin : onSubmitSignup}
               >
                 {(formik) => {
                   return (
-                    <div className="custom-form contact-form">
+                    <Form className="custom-form contact-form">
                       <div className="row">
                         {isLogin ? <LoginForm /> : <SignupForm />}
 
@@ -68,7 +73,7 @@ const RegisterationForm = () => {
                           </button>
                         </div>
                       </div>
-                    </div>
+                    </Form>
                   );
                 }}
               </Formik>
