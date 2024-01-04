@@ -1,12 +1,19 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import TopicsListPage from "./Components/Pages/TopicsLists/TopicsListPage";
+// import TopicsListPage from "./Components/Pages/TopicsLists/TopicsListPage";
 import Home from "./Components/Pages/Home/Home";
-import Contact from "./Components/Pages/Contact/Contact";
+// import Contact from "./Components/Pages/Contact/Contact";
 import RootLayout from "./Components/Root";
 import Registeration from "./Components/Pages/Register/Registration";
 import { action as logoutAction } from "./Components/Pages/Logout";
 import { tokenLoader } from "./util/auth";
+import { lazy, Suspense } from "react";
+
+const TopicsListPage = lazy(() =>
+  import("./Components/Pages/TopicsLists/TopicsListPage")
+);
+const Contact = lazy(() => import("./Components/Pages/Contact/Contact"));
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,11 +27,19 @@ const router = createBrowserRouter([
       },
       {
         path: "contact",
-        element: <Contact />,
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "TopicsListPage",
-        element: <TopicsListPage />,
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <TopicsListPage />
+          </Suspense>
+        ),
       },
       {
         path: "register",
