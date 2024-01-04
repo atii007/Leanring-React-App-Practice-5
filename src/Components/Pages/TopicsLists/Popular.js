@@ -4,6 +4,7 @@ import undrawRemoteDesignTeam from "../../../assets/images/topics/undraw-Remote-
 import undrawPodcastAudience from "../../../assets/images/topics/undraw_Podcast_audience_re_4i5q.png";
 import undrawOnlineAd from "../../../assets/images/topics/undraw_online_ad_re_ol62.png";
 import { Link } from "react-router-dom";
+import handleLinkClick from "../../../util/handleLinkClick";
 const topics = [
   {
     title: "Web Design",
@@ -58,6 +59,7 @@ const Popular = () => {
                       <Link
                         to={topDet.href}
                         className="btn custom-btn mt-3 mt-lg-4"
+                        onClick={handleLinkClick}
                       >
                         Learn More
                       </Link>

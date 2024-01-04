@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import handleLinkClick from "../../util/handleLinkClick";
 
 const Menu = [
   { title: "Home", href: "/" },
@@ -17,7 +18,11 @@ const FooterLinkList = () => {
       <ul className="site-footer-links">
         {Menu.map((footSec) => (
           <li className="site-footer-link-item" key={footSec.href}>
-            <Link to={footSec.href} className="site-footer-link">
+            <Link
+              onClick={handleLinkClick}
+              to={footSec.href}
+              className="site-footer-link"
+            >
               {footSec.title}
             </Link>
           </li>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import businesswomanImage from "../../../../../../assets/images/businesswoman-using-tablet-analysis.jpg";
+import handleLinkClick from "../../../../../../util/handleLinkClick";
 
 const finance = {
   title: "Finance",
@@ -10,6 +11,12 @@ const finance = {
   Image: businesswomanImage,
   href: "/TopicsListPage",
 };
+
+const social = [
+  { href: "/", class: "social-icon-link bi-twitter" },
+  { href: "/", class: "social-icon-link bi-facebook" },
+  { href: "/", class: "social-icon-link bi-pinterest" },
+];
 
 const FinanaceBox = () => {
   return (
@@ -25,7 +32,11 @@ const FinanaceBox = () => {
             <div>
               <h5 className="text-white mb-2">{finance.title}</h5>
               <p className="text-white">{finance.description}</p>
-              <Link to={finance.href} className="btn custom-btn mt-2 mt-lg-3">
+              <Link
+                onClick={handleLinkClick}
+                to={finance.href}
+                className="btn custom-btn mt-2 mt-lg-3"
+              >
                 Learn More
               </Link>
             </div>
@@ -34,17 +45,21 @@ const FinanaceBox = () => {
           <div className="social-share d-flex">
             <p className="text-white me-4">Share:</p>
             <ul className="social-icon">
-              <li className="social-icon-item">
-                <Link to="/" className="social-icon-link bi-twitter" />
-              </li>
-              <li className="social-icon-item">
-                <Link to="/" className="social-icon-link bi-facebook" />
-              </li>
-              <li className="social-icon-item">
-                <Link to="/" className="social-icon-link bi-pinterest" />
-              </li>
+              {social.map((icon) => (
+                <li className="social-icon-item" key={icon.class}>
+                  <Link
+                    onClick={handleLinkClick}
+                    to={icon.href}
+                    className={icon.class}
+                  ></Link>
+                </li>
+              ))}
             </ul>
-            <Link to="/" className="custom-icon bi-bookmark ms-auto" />
+            <Link
+              onClick={handleLinkClick}
+              to="/"
+              className="custom-icon bi-bookmark ms-auto"
+            />
           </div>
           <div className="section-overlay" />
         </div>

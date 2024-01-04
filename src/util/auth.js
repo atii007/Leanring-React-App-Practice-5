@@ -1,7 +1,8 @@
 export function getAuthToken() {
-  const token = localStorage.setItem("token");
+  const token = localStorage.getItem("token");
+
   return token;
 }
 export function tokenLoader() {
-  return getAuthToken;
+  return getAuthToken();
 }

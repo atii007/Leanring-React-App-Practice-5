@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Form, useRouteLoaderData } from "react-router-dom";
 
 const NavbarList = () => {
-  // const token = useRouteLoaderData("root");
+  const token = useRouteLoaderData("root");
+
   const [activeLink, setActiveLink] = useState("");
 
   const links = [
@@ -12,10 +13,10 @@ const NavbarList = () => {
       href: "/TopicsListPage",
     },
     { title: "Contact", href: "/contact" },
-    { title: "Authenticate", href: "/register?mode=login" },
   ];
 
   const handleLinkClick = (title) => {
+    window.scrollTo(0, 0);
     setActiveLink(title);
   };
 
@@ -43,6 +44,8 @@ const NavbarList = () => {
     };
   });
 
+  useEffect(() => {}, []);
+
   return (
     <>
       <ul className="navbar-nav ms-lg-5 me-lg-auto">
@@ -62,12 +65,23 @@ const NavbarList = () => {
             </NavLink>
           </li>
         ))}
+        {!token && (
+          <li>
+            <NavLink
+              className="nav-link click-scroll"
+              to="/register?mode=login"
+            >
+              Authenticate
+            </NavLink>
+          </li>
+        )}
       </ul>
-      {/* {token && (
+
+      {token && (
         <Form action="/logout" method="post">
           <button className="form-control">Logout</button>
         </Form>
-      )} */}
+      )}
     </>
   );
 };

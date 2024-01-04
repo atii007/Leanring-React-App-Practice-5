@@ -4,6 +4,7 @@ import undrawRedesignFeedback from "../../../../../../assets/images/topics/undra
 import colleaguesWorkingCozyOffice from "../../../../../../assets/images/topics/colleagues-working-cozy-office-medium-shot.png";
 import WebBox from "../../Featured/FeaturedCards/WebBox";
 import { Link } from "react-router-dom";
+import handleLinkClick from "../../../../../../util/handleLinkClick";
 
 const designDetails = [
   {
@@ -38,7 +39,7 @@ const Design = () => {
               key={des.title}
             >
               <div className="custom-block bg-white shadow-lg">
-                <Link to="TopicsListPage">
+                <Link to="TopicsListPage" onClick={handleLinkClick}>
                   <div className="d-flex">
                     <div>
                       <h5 className="mb-2">{des.title}</h5>

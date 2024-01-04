@@ -5,6 +5,7 @@ import Design from "./Sections/Design";
 import Marketing from "./Sections/Marketing";
 import Finance from "./Sections/Finance";
 import { Link } from "react-router-dom";
+import handleLinkClick from "../../../../../util/handleLinkClick";
 
 const Topics = () => {
   return (
@@ -35,6 +36,7 @@ const Topics = () => {
                 <Link
                   to="TopicsListPage"
                   className="btn custom-btn custom-border-btn ms-3"
+                  onClick={handleLinkClick}
                 >
                   Check Out the List
                 </Link>

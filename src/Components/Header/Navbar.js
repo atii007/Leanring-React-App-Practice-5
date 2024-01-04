@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NavbarList from "./NavbarList";
 import { NavLink } from "react-router-dom";
+import handleLinkClick from "../../util/handleLinkClick";
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -30,7 +31,7 @@ const Navbar = () => {
           style={{ position: "fixed", top: "0", width: "100%" }}
         >
           <div className="container">
-            <NavLink className="navbar-brand" to="/">
+            <NavLink className="navbar-brand" to="/" onClick={handleLinkClick}>
               <i className="bi bi-book-half" style={{ paddingRight: "5px" }} />
               <span>Topic</span>
             </NavLink>

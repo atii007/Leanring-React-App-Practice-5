@@ -4,6 +4,7 @@ import undrawOnlineAd from "../../../../../../assets/images/topics/undraw_online
 import undrawGroupVideo from "../../../../../../assets/images/topics/undraw_Group_video_re_btu7.png";
 import undrawViralTweet from "../../../../../../assets/images/topics/undraw_viral_tweet_gndb.png";
 import { Link } from "react-router-dom";
+import handleLinkClick from "../../../../../../util/handleLinkClick";
 
 const marketingDetails = [
   {
@@ -43,7 +44,7 @@ const Marketing = () => {
               key={mark.title}
             >
               <div className="custom-block bg-white shadow-lg">
-                <Link to="TopicsListPage">
+                <Link to="TopicsListPage" onClick={handleLinkClick}>
                   <div className="d-flex">
                     <div>
                       <h5 className="mb-2">{mark.title}</h5>

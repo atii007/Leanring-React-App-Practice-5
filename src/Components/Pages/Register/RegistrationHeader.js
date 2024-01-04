@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import handleLinkClick from "../../../util/handleLinkClick";
 
 const RegisterationHeader = () => {
   return (
@@ -10,14 +11,16 @@ const RegisterationHeader = () => {
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb">
                 <li className="breadcrumb-item">
-                  <Link to="/">Homepage</Link>
+                  <Link to="/" onClick={handleLinkClick}>
+                    Homepage
+                  </Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
-                  Registeration Form
+                  Authenticate
                 </li>
               </ol>
             </nav>
-            <h2 className="text-white">Registration Form</h2>
+            <h2 className="text-white">Authentication</h2>
           </div>
         </div>
       </div>

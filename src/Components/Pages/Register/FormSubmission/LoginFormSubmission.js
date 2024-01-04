@@ -10,9 +10,6 @@ const onSubmitLogin = async (values, { resetForm, setFieldError }) => {
   }
 
   const users = await response.json();
-  console.log("users data from database", users);
-  const token = users.token;
-  console.log("token after user", token);
 
   if (users && Object.keys(users).length > 0) {
     const EmailExists = Object.values(users).some(
@@ -26,17 +23,25 @@ const onSubmitLogin = async (values, { resetForm, setFieldError }) => {
       setFieldError("email", "Email not registered");
     }
     if (!passwordExists) {
-      setFieldError("password", "Incorrect Password");
+      setFieldError("password", "Invalid Credentials");
     }
 
     if (EmailExists && passwordExists) {
+      const token = generateToken();
+
       localStorage.setItem("token", token);
-      console.log("token after local storage", token);
 
       resetForm();
       window.alert("Login Successful!");
     }
   }
+};
+
+const generateToken = () => {
+  return (
+    Math.random().toString(36).substring(2, 15) +
+    Math.random().toString(36).substring(2, 15)
+  );
 };
 
 export default onSubmitLogin;

@@ -3,6 +3,7 @@ import React from "react";
 import undrawFinance from "../../../../../../assets/images/topics/undraw_Finance_re_gnv2.png";
 import undrawEducatorRe from "../../../../../../assets/images/topics/undraw_Educator_re_ju47.png";
 import { Link } from "react-router-dom";
+import handleLinkClick from "../../../../../../util/handleLinkClick";
 
 const financeDetails = [
   {
@@ -37,7 +38,7 @@ const Finance = () => {
               key={finance.title}
             >
               <div className="custom-block bg-white shadow-lg">
-                <Link to="TopicsListPage">
+                <Link to="TopicsListPage" onClick={handleLinkClick}>
                   <div className="d-flex">
                     <div>
                       <h5 className="mb-2">{finance.title}</h5>

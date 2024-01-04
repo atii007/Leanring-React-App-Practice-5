@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import handleLinkClick from "../../../util/handleLinkClick";
 
 const ContactHeader = () => {
   return (
@@ -10,7 +11,9 @@ const ContactHeader = () => {
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb">
                 <li className="breadcrumb-item">
-                  <Link to="/">Homepage</Link>
+                  <Link to="/" onClick={handleLinkClick}>
+                    Homepage
+                  </Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
                   Contact Form

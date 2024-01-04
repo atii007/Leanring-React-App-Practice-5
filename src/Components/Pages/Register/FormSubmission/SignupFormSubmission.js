@@ -36,7 +36,7 @@ const onSubmitSignup = async (values, { resetForm, setFieldError }) => {
   );
 
   resetForm();
-  window.alert("Registration Successful!");
+  window.alert("Successfully Registered! Login Now to continue");
 };
 
 export default onSubmitSignup;
