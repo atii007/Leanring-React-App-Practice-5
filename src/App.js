@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-// import TopicsListPage from "./Components/Pages/TopicsLists/TopicsListPage";
+
 import Home from "./Components/Pages/Home/Home";
-// import Contact from "./Components/Pages/Contact/Contact";
+
 import RootLayout from "./Components/Root";
 import Registeration from "./Components/Pages/Register/Registration";
 import { action as logoutAction } from "./Components/Pages/Logout";

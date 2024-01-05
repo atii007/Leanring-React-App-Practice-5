@@ -24,7 +24,7 @@ const ContactForm = () => {
     console.log("Form Data", values);
 
     await fetch(
-      "https://custom-hooks-ac50d-default-rtdb.firebaseio.com/messages.json",
+      "https://react-database-8cbf4-default-rtdb.firebaseio.com/messages.json",
       {
         method: "POST",
         body: JSON.stringify({

@@ -1,6 +1,4 @@
 const onSubmitSignup = async (values, { resetForm, setFieldError }) => {
-  console.log(values);
-
   const response = await fetch(
     "https://custom-hooks-ac50d-default-rtdb.firebaseio.com/users.json"
   );
